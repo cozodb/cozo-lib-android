@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "CozoAndroid"
-include ':app'
+include ':cozo_android'
