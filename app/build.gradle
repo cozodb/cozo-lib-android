@@ -1,19 +1,18 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
+    id 'maven-publish'
+    id 'signing'
 }
 
 android {
-    namespace 'com.example.cozoandroid'
-    compileSdk 32
+    namespace 'org.cozodb'
+    compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.cozoandroid"
         minSdk 16
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -28,12 +27,58 @@ android {
     }
 }
 
-dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'com.google.android.material:material:1.7.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId = 'io.github.cozodb'
+            artifactId = 'cozo_android'
+            version = '0.2.1'
+
+            pom {
+                name = 'cozo_android'
+                description = 'Android wrapper for CozoDB'
+                url = 'https://github.com/cozodb/cozo-lib-android'
+                inceptionYear = '2022'
+
+                licenses {
+                    license {
+                        name = 'MIT License'
+                        url = 'https://opensource.org/licenses/MIT'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'zh217'
+                        name = 'Ziyang Hu'
+                        email = 'hu.ziyang@cantab.net'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git:github.com/cozodb/cozo-lib-android.git'
+                    developerConnection = 'scm:git:https://github.com/cozodb/cozo-lib-android.git'
+                    url = 'https://github.com/cozodb/cozo-lib-android.git'
+                }
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            name = "OSSRH"
+            url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+            credentials {
+                username = findProperty('ossrhUsername')
+                password = findProperty('ossrhPassword')
+            }
+        }
+    }
+}
+
+signing {
+    sign publishing.publications.mavenJava
+}
+
+dependencies {
+    implementation 'org.sharegov:mjson:1.4.1'
 }

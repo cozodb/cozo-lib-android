@@ -10,7 +10,7 @@ import java.nio.file.Paths;
 import java.util.zip.GZIPInputStream;
 
 public class CozoJavaBridge {
-    private static native int openDb(String kind, String path);
+    private static native int openDb(String engine, String path, String options);
 
     private static native boolean closeDb(int id);
 
@@ -24,14 +24,24 @@ public class CozoJavaBridge {
 
     private static native String restore(int id, String file);
 
+    private static native String importFromBackup(int id, String data);
+
     private final int dbId;
 
     static {
         System.loadLibrary("cozo_java");
     }
 
+    public CozoJavaBridge() {
+        this("mem", "");
+    }
+
     public CozoJavaBridge(String kind, String path) {
-        int id = CozoJavaBridge.openDb(kind, path);
+        this(kind, path, "{}");
+    }
+
+    public CozoJavaBridge(String kind, String path, String config) {
+        int id = CozoJavaBridge.openDb(kind, path, config);
         if (id < 0) {
             throw new RuntimeException("cannot create database: error code " + id);
         }
@@ -50,7 +60,7 @@ public class CozoJavaBridge {
         return CozoJavaBridge.exportRelations(this.dbId, desc);
     }
 
-    public String exportRelation(String data) {
+    public String importRelations(String data) {
         return CozoJavaBridge.importRelations(this.dbId, data);
     }
 
@@ -60,6 +70,10 @@ public class CozoJavaBridge {
 
     public String restore(String path) {
         return CozoJavaBridge.restore(this.dbId, path);
+    }
+
+    public String importRelationsFromBackup(String data) {
+        return CozoJavaBridge.importFromBackup(this.dbId, data);
     }
 
 //    public static void main(String[] args) {
