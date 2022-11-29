@@ -213,25 +213,12 @@ public class CozoDb {
      * @throws CozoException if any errors are encountered
      */
     public Json exportRelations(List<String> relations) throws CozoException {
-        return this.exportRelations(relations, false);
-    }
-
-    /**
-     * Export several relations
-     *
-     * @param relations: names of the relations to export
-     * @param asObjects: changes the output JSON to use objects (maps)
-     * @return the exported data in JSON
-     * @throws CozoException if any errors are encountered
-     */
-    public Json exportRelations(List<String> relations, boolean asObjects) throws CozoException {
         Json rels = Json.array();
         for (String s : relations) {
             rels.add(s);
         }
         Json args = Json.object(
-                "relations", rels,
-                "as_objects", asObjects
+                "relations", rels
         );
         Json res = Json.read(bridge.exportRelations(args.toString()));
         if (res.at("ok").asBoolean()) {
