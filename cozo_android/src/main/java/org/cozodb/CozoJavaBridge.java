@@ -1,13 +1,12 @@
-package org.cozodb;
+/*
+ * Copyright 2022, The Cozo Project Authors.
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+ * If a copy of the MPL was not distributed with this file,
+ * You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
 
-import java.io.*;
-import java.net.URL;
-import java.nio.channels.Channels;
-import java.nio.channels.ReadableByteChannel;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.zip.GZIPInputStream;
+package org.cozodb;
 
 public class CozoJavaBridge {
     private static native int openDb(String engine, String path, String options);
@@ -75,12 +74,4 @@ public class CozoJavaBridge {
     public String importRelationsFromBackup(String data) {
         return CozoJavaBridge.importFromBackup(this.dbId, data);
     }
-
-//    public static void main(String[] args) {
-//        CozoJavaBridge db = new CozoJavaBridge("mem", "");
-//        System.out.println(db);
-//        System.out.println(db.query("?[] <- [[1, 2, 3]]", ""));
-//        System.out.println(db.query("?[z] <- [[1, 2, 3]]", ""));
-//        System.out.println(db.close());
-//    }
 }

@@ -14,3 +14,4 @@
 .cxx
 local.properties
 cozo_android/src/main/jniLibs/*/*.so
+.idea
