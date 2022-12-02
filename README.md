@@ -1,5 +1,7 @@
 # CozoDB for Android
 
+[![android](https://img.shields.io/maven-central/v/io.github.cozodb/cozo_android)](https://mvnrepository.com/artifact/io.github.cozodb/cozo_android)
+
 This document describes how to set up Cozo for use in Android.
 To learn how to use CozoDB (CozoScript), follow
 the [tutorial](https://github.com/cozodb/cozo-docs/blob/main/tutorial/tutorial.ipynb)
@@ -8,11 +10,17 @@ described in the tutorial with an in-browser DB [here](https://cozodb.github.io/
 
 ## Installation
 
-Artefacts are on Maven central.
+Artefacts are on Maven central:
+
+```groovy
+implementation 'io.github.cozodb:cozo_android:0.2.2'
+```
 
 ## Usage
 
 The API is identical to that in the [JVM library](https://github.com/cozodb/cozo-lib-java).
+
+You can build upon the example project [here](https://github.com/cozodb/cozo-android-example).
 
 ## Reducing app size
 
