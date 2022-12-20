@@ -13,7 +13,7 @@ described in the tutorial with an in-browser DB [here](https://cozodb.github.io/
 Artefacts are on Maven central:
 
 ```groovy
-implementation 'io.github.cozodb:cozo_android:0.2.2'
+implementation 'io.github.cozodb:cozo_android:0.3.0'
 ```
 
 ## Usage
