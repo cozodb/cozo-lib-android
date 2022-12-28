@@ -4,16 +4,15 @@
 
 This document describes how to set up Cozo for use in Android.
 To learn how to use CozoDB (CozoScript), follow
-the [tutorial](https://github.com/cozodb/cozo-docs/blob/main/tutorial/tutorial.ipynb)
-first and then read the [manual](https://cozodb.github.io/current/manual/). You can run all the queries
-described in the tutorial with an in-browser DB [here](https://cozodb.github.io/wasm-demo/).
+the [tutorial](https://docs.cozodb.org/en/latest/tutorial.html). You can run all the queries
+described in the tutorial with an in-browser DB [here](https://www.cozodb.org/wasm-demo/).
 
 ## Installation
 
 Artefacts are on Maven central:
 
 ```groovy
-implementation 'io.github.cozodb:cozo_android:0.3.0'
+implementation 'io.github.cozodb:cozo_android:0.4.0'
 ```
 
 ## Usage
