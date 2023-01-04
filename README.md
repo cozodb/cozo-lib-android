@@ -3,13 +3,11 @@
 [![android](https://img.shields.io/maven-central/v/io.github.cozodb/cozo_android)](https://mvnrepository.com/artifact/io.github.cozodb/cozo_android)
 
 This document describes how to set up Cozo for use in Android.
-To learn how to use CozoDB (CozoScript), follow
-the [tutorial](https://docs.cozodb.org/en/latest/tutorial.html). You can run all the queries
-described in the tutorial with an in-browser DB [here](https://www.cozodb.org/wasm-demo/).
+To learn how to use CozoDB (CozoScript), read the [docs](https://docs.cozodb.org/en/latest/index.html).
 
 ## Installation
 
-Artefacts are on Maven central:
+Artefacts are on [Maven central](https://mvnrepository.com/artifact/io.github.cozodb/cozo_android):
 
 ```groovy
 implementation 'io.github.cozodb:cozo_android:0.4.0'
@@ -33,6 +31,8 @@ android {
     }
 }
 ```
+
+For more information: 
 
 * [Android ABIs](https://developer.android.com/ndk/guides/abis)
 * [App bundles](https://developer.android.com/guide/app-bundle)
