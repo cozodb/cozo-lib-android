@@ -9,7 +9,7 @@
 库可从 [maven central](https://mvnrepository.com/artifact/io.github.cozodb/cozo_android) 下载：
 
 ```groovy
-implementation 'io.github.cozodb:cozo_android:0.4.0'
+implementation 'io.github.cozodb:cozo_android:0.4.1'
 ```
 
 ## 使用方法
