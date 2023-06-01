@@ -10,7 +10,7 @@ To learn how to use CozoDB (CozoScript), read the [docs](https://docs.cozodb.org
 Artefacts are on [Maven central](https://mvnrepository.com/artifact/io.github.cozodb/cozo_android):
 
 ```groovy
-implementation 'io.github.cozodb:cozo_android:0.7.1'
+implementation 'io.github.cozodb:cozo_android:0.7.2'
 ```
 
 ## Usage
