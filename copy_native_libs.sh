@@ -2,7 +2,7 @@
 
 rm -f cozo_android/src/main/jniLibs/*/*.so
 
-COZO_HOME=~/cozo
+COZO_HOME=~/repos/cozo
 
 mkdir -p cozo_android/src/main/jniLibs/arm64-v8a
 mkdir -p cozo_android/src/main/jniLibs/armeabi-v7a
